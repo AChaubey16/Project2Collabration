@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/glyphiconcolor.css">
+<link rel="stylesheet" href="css/notification.css">
+<link rel="stylesheet" href="css/style3.css">
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js"></script>
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-cookies.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="JScontrollers/jobcontroller.js"></script>
+<script type="text/javascript" src="JSservices/jobservice.js"></script>
+<script type="text/javascript" src="JScontrollers/usercontroller.js"></script>
+<script type="text/javascript" src="JSservices/userservice.js"></script>
+<script type="text/javascript" src="JScontrollers/blogcontroller.js"></script>
+<script type="text/javascript" src="JSservices/blogservice.js"></script>
+<script type="text/javascript"
+	src="JScontrollers/blogindetailcontroller.js"></script>
+<script type="text/javascript"
+	src="JScontrollers/notificationcontroller.js"></script>
+<script type="text/javascript" src="JSservices/notificationservice.js"></script>
+<script type="text/javascript" src="JScontrollers/friendcontroller.js"></script>
+<script type="text/javascript" src="JSservices/friendservice.js"></script>
+<script type="text/javascript" src="JScontrollers/chatcontroller.js"></script>
+<script type="text/javascript" src="JSservices/chatservice.js"></script>
+<script type="text/javascript" src="js/sockjs/sockjs.min.js"></script>
+<script type="text/javascript" src="js/stomp/dist/stomp.min.js"></script>
+<script type="text/javascript">
+	$(document).scroll(
+			function() {
+				$('.navbar-inverse').toggleClass('scrolled',
+						$(this).scrollTop() > $('.navbar-inverse').height());
+			});
+</script>
+</head>
+</head>
+<body ng-app="app">
+   <!-- bootstrap an angular module 'app' -->
+	<nav id="fix-nav" class="navbar-inverse">
+		<div class="navbar-header">
+			<a href="" class="navbar-brand"><img src="img/job.png"></a>
+			<button class="navbar-toggle collapsed" type="button"
+				data-toggle="collapse" data-target="#collapse-example"
+				aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+		</div>
+		<div class="collapse navbar-collapse" id="collapse-example">
+
+			<ul class="nav navbar-nav">
+				<li><a class="nav-link" href="#">HOME </a></li>
+				<li><a href="#/addjob" ng-show="user.role=='ADMIN'">Add Job</a></li>
+				<li><a href="#/getalljobs" ng-show="user!=undefined">Get
+						All Jobs</a></li>
+				<li><a href="#/registration" ng-show="user==undefined">Sign
+						Up</a></li>
+				<li><a href="#/userLogin" ng-show="user==undefined"><span
+						class="glyphicon glyphicon-log-in">SignIn</span></a></li>
+				<li><a href="#/profile" ng-show="user!=undefined">{{user.firstName}}&nbsp;{{user.lastName}}</a></li>
+				<li class="dropdown"><a href="" class="dropdown-toggle"
+					data-toggle="dropdown" ng-show="user.email!=undefined"> <span
+						class="glyphicon glyphicon-globe"> <span
+							class="rw-number-notification" ng-if="notificationCount>0">{{notificationCount}}</span></span></a>
+					<ul class="dropdown-menu">
+						<span class="dropdown-content">
+							<li ng-repeat="notification in notifications"><a
+								href="#/getnotification/{{notification.notificationId}}">Blog
+									titled "<b>{{notification.blogTitle}} "</b>approval status is
+									updated
+							</a>
+								<hr></li>
+						</span>
+					</ul></li>
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown" ng-show="user!=undefined">Blog <span
+						class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="#/addblog">Add Blog</a></li>
+						<li><a href="#/blogsapproved">Blogs Approved</a></li>
+						<li><a href="#/blogswaiting" ng-show="user.role=='ADMIN'">Blogs
+								Waiting for approval</a></li>
+					</ul></li>
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown" ng-show="user!=undefined">Friend <span
+						class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="#/suggestedusers">Suggested users</a></li>
+						<li><a href="#/pendingrequests">Pending Requests</a></li>
+						<li><a href="#/listoffriends">Friends</a></li>
+					</ul></li>
+				<li><a href="#/chat" ng-show="user!=undefined">Chat</a></li>
+				<li><a href="#/uploadprofilepic"
+					ng-show="user.email!=undefined"> <img
+						src="http://localhost:8080/JobPortalMiddleware/getimage?email={{user.email}}"
+						height="50px" width="50px" class="img-rounded"
+						alt="Upload profilePic">
+				</a></li>
+				<li><a href="" ng-click="userlogout()"
+					ng-show="user!=undefined"><span
+						class="glyphicon glyphicon-log-out">Signout</span></a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container">
+		<!-- content of partial views will get added here -->
+		<div ng-view></div>
+	</div>
+
+</body>
+</html>

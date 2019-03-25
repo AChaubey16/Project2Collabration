@@ -1,0 +1,32 @@
+<html>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<head>
+      <link rel="stylesheet" href="css/blog.css">
+</head>
+<div class="main-div">
+<div class="outBlog">
+<h1>post a blog</h1>
+<div ng-show="user==undefined">Please login to add a blog</div>
+<div ng-show="user!=undefined">
+<span style="color:red">{{error.errorMessage}}</span>
+<div class="inBlog">
+<form>
+<p>Enter Blog Title</p>
+<input type="text" ng-model="blog.blogTitle">
+<p>Enter Blog Content</p>
+<textarea  ng-model="blog.blogContent"></textarea>
+<button ng-click="addBlog(blog)" class="btn">Post Blog</button>
+
+</form>
+</div>
+</div>
+</div>
+</div>
+<!-- {'blogTitle':'Introduction to Spring','blogContent':'..........'}
+V -> Controller -> Service -> middleware -> daos
+ -->
+ </html>

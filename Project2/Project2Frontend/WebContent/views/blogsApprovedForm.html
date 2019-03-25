@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="css/job.css">
+<b ng-show="user==undefined">Please login</b>
+<body class="panel">
+<div ng-show="user!=undefined">
+<div class= "middle">
+<div class="panel-heading">
+
+			<h1>List Of Blogs Approved</h1>
+		</div>
+		<div class="panel-main">
+			<ul>
+				<li ng-repeat="blog in blogsApproved">
+					<!-- approved value as true --> 
+					<a href="#/getblogapproved/{{blog.blogId}}"> Blog Title : {{blog.blogTitle}}</a><br>
+					Posted On : {{blog.postedOn | date:'dd-MMM-yyyy hh:mm:ss'}}<br>
+					Author :{{blog.author.email}}<br>
+					<hr>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,33 @@
+
+<span ng-show="user.role!='ADMIN'">You are not authorized to view the content</span>
+<div ng-show="user.role=='ADMIN'">
+<div class="panel panel-info">
+<div class="panel-heading">
+<img src="http://localhost:8080/JobPortalMiddleware/getimage?email={{blog.author.email}}" alt="Upload Image" height="140px" width="145px"/>
+<table class="table table-bored">
+<tr><td><b>Blog Title: </b></td><td>{{blog.blogTitle}}<br></td></tr>
+<tr><td><b>Posted On :  </b></td><td>{{blog.postedOn | date:'dd-MMMM-yyyy'}}<br></td></tr>
+<tr><td><b>Posted By : </b></td><td> {{blog.author.firstName}} &nbsp; {{blog.author.lastName}}<br></td></tr>
+<tr><td><b>Email     :   </b></td><td>{{blog.author.email}}<br></td></tr>
+</table>
+</div>
+<div class="panel-body">
+<b>Content:</b><br>
+<p ng-bind-html="htmlContent">
+</p>
+<hr>
+<div>
+<button class="btn btn-info" ng-click="approveBlog(blog)" ng-hide="isRejected">Approve</button> &nbsp; 
+<button class="btn  btn-danger" ng-click="showRejectionTxt()">Reject</button> &nbsp;
+
+<div  ng-show="isRejected">
+<br>
+<textarea rows="5" cols="50" ng-model="rejectionReason"></textarea>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button class="btn  btn-danger" ng-click="rejectBlog(blog.blogId,rejectionReason)" ng-show="isRejected" >Confirm Reject</button>
+
+</div>
+</div>
+</div>
+</div>

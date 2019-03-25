@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Day 001 Login Form</title>
+ <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+<div class=back>
+  <div class="login-box">
+  
+  <h1>User login</h1>
+  <img src="img/login.png" class="login">
+      <span style="color:red">{{msg}}</span>
+   
+    <span style="color:red">{{error.errorMessage}}</span>
+  
+  <form>
+  <input type="text" name="email" placeholder="Enter email" ng-model="user.email">
+  <input type="password" name="password" placeholder="Enter password" ng-model="user.password">
+  <input type="submit" value="login" ng-click="login(user)">
+    <a href="#/registration">Don't have an account?</a>
+    <a href="#">HOME</a>
+  
+  </form>
+  </div>
+
+</div>
+</body>
+
+</html>

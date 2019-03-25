@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="ISO-8859-1">
+<title>Login Form</title>
+  <link rel="stylesheet" href="css/style2.css">
+</head>
+<body>
+    <div class="signup-form">
+			<div class="sign-up">
+               <h1>SIGN UP</h1>			
+				<div class="group">
+					<input id="firstName" type="text" class="input" placeholder="FIRST NAME" ng-model="user.firstName">
+				</div>
+				<div class="group">
+					<input id="lastName" type="text" class="input" placeholder="LAST NAME" ng-model="user.lastName">
+				</div>
+				<div class="group">
+					<input id="phoneNbr" type="text" class="input" placeholder="PHONE NUMBER" ng-model="user.phoneNbr">
+				</div>
+				
+				<div class="group">
+					<input id="email" type="email" class="input" placeholder="EMAIL" ng-model="user.email">
+				</div>
+								
+				<div class="group">
+					<input id="password" type="password" class="input" data-type="PASSWORD" placeholder="PASSWORD" ng-model="user.password">
+				</div>
+				<div class="role">
+				<select ng-model="user.role">
+				    <option value="">ROLE</option>
+					              <option value="STUDENT">Student
+					              <option value="ALUMNI">Alumni
+				               	<option value="EMPLOYEE">Employee
+				  </select>
+				  </div>
+				<div class="sub">
+					<input type="submit" ng-click="userRegistration(user)"class="button" value="Sign Up">
+				</div>
+				
+				
+			</div>
+			
+			</div>
+  
+  
+    
+</body>
+</html>

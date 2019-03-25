@@ -1,0 +1,38 @@
+<html>
+<head>
+<link rel="stylesheet" href="css/job.css">
+
+</head>
+<body>
+<div class="back-job">
+<h1>Add Job</h1>
+<span style="color:red">{{message}}</span>
+<span style="color:red">{{error.errorMessage}}</span>
+
+<form>
+<!-- job is a model name, this model can be accessed in the controller by using $scope
+$scope.job -> {'jobTitle':'','skillsRequired':'',.........}
+ -->
+<p>Enter JobTitle</p>        
+<input type="text"  data-ng-model="job.jobName">
+<p>Enter Salary</p>          
+<input type="text" ng-model="job.salary">
+<p>Enter Skills required</p> 
+<input type="text"  ng-model="job.skillsRequired">
+<p>Enter Location</p>        
+<input type="text" ng-model="job.location">
+<p>Enter YrsOfExp</p>       
+ <input type="text" ng-model="job.	experienceReq">
+<p>Enter Reference </p>      
+<input type="text" ng-model="job.reference">
+<p>Enter qualification </p> 
+<input type="text" ng-model="job.qualification">
+<p>Enter Description</p>     
+<textarea ng-model="job.jobDescription"></textarea> 
+<div id="">
+<button  ng-click="addJob()">Add Job</button>
+</div>
+</form>
+</div>
+</body>
+</html>

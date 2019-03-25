@@ -1,0 +1,128 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.outBlog{
+	position: absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	background-color:#929292;
+	width:100%;
+	height:100%;
+}
+
+.inBlog{
+	position:absolute;
+	top:50%;
+	left:50%;
+	width: 670px;
+	height:360px;
+	color: #fff;
+	transform:translate(-50%, -50%);
+	box-sizing: border-box;
+	border-radius: 10%;
+	padding: 70px 30px;
+	background-color:rgba(0,0,0,0.1);
+    box-shadow: 0px 0px 8px 3px black;
+	
+}
+h1{
+	margin:0;
+	text-align: center;
+	font-size: 30px;
+	text-transform: uppercase;
+	padding-top: 115px;
+	font-weight: bold;
+	text-decoration: underline;
+	}
+p{
+	margin-top:-30px;
+	padding-top:0;
+	
+		text-align: center;
+	font-weight: bold;	
+		text-transform: uppercase;
+	font-size: 16px;
+	font-stretch: wider;
+}
+input[type="text"], textarea{
+	background:gray;
+	outline: none;
+	height:40px;
+	color:#fff;
+	font-size: 16px;
+	text-align:center;
+	border-radius: 10px;
+	font-style: oblique;
+	margin-left: 19%;
+	margin-bottom: 7%;
+	margin-top:0px;
+	width:60%;
+
+	
+}
+
+textarea{
+	border-bottom: 2px solid #fff;
+	background:gray;
+	outline: none;
+	height:110px;
+	width:60%;
+	color:#fff;
+	font-size: 16px;
+	border-radius: 20px;
+	font-style: oblique;
+	margin-left: 19%;
+	margin-bottom: 11px;
+}
+
+	button{
+	align-items:center;
+	border:none;
+	outline: none;
+	height:40px;
+	background:green;
+	color:#fff;
+	font-size:18px;
+	border-radius: 20px;
+	margin-left: 40%;
+	box-shadow: 0px 0px 8px 3px black;	
+    text-transform: uppercase;
+	}	
+	
+/*----blogsWating----*/
+
+body{
+background-image:url("../img/blogpic.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  
+}
+.middle{	
+width:100%;
+	height:100%;
+	background-color: black;
+    opacity: 0;
+	position: absolute;
+	top:0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+.pan-b{
+	margin-top:100px;
+	margin-bottom:0;
+	padding-top:90px;
+text-align:center;	
+	margin-left:50%;
+	margin-right:50%;
+	width: 600px;
+	color: #fff;
+	transform:translate(-50%, -0%);
+	box-sizing: border-box;
+	background-color:rgba(0,0,0,0.3);
+
+	}

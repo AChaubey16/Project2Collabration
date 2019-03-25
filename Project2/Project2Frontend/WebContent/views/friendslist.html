@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="css/job.css">
+<body class="panel">
+<div class= "middle">
+<div class="panel-heading">
+<h1>Friends</h1>
+</div>
+<div class="panel-main">
+<li ng-repeat="friend in friends"><!-- friends is an Array of User object -->
+{{friend.email}}<br>
+{{friend.firstName}}&nbsp;{{friend.lastName}}<br>
+{{friend.phoneNbr}}<br>
+<img src="http://localhost:8080/JopPortalMiddleware/getimage?email={{suggestedUser.email}}"
+ alt="No Image" height="60px" width="60px">
+<br>
+</li>
+</div>
+</div>

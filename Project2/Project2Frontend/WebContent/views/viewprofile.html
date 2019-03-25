@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+ <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+<div class= "div-back">
+<div class="div-front">
+<div class="div1">
+    
+    <div class="img">
+        <img src="img/icon.png">
+    </div>
+    <div class="divIn">
+        {{user.firstName}}&nbsp;{{user.lastName}}
+    </div>
+</div>
+<h1> User Details</h1>
+    <div class="div2">
+     <p>EMAIL        : {{user.email}}</p>
+     <p>PASSWORD     : {{user.password}}</p>
+     <p>PHONE NUMBER : {{user.phoneNbr}}</p>
+     <p>ROLE         : {{user.role}}</p>
+     <a href="#/updateuser">EDIT PROFILE</a>
+    </div>
+</div>
+</div>
+</body>
+</html>

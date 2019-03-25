@@ -1,0 +1,31 @@
+<div class="panel panel-primary">
+<div class="panel-heading">
+<b>Blog Title:</b>{{blog.blogTitle}}<br>
+<b>Posted On :</b> {{blog.postedOn | date:'dd-MMM-yyyy :hh:mm:ss'}}<br>
+<b>Author    :</b>{{blog.author.email}}<br>
+</div>
+	<div class=panel-body>
+		<div>
+			<p ng-bind-html="content">
+				<br>
+		</div>
+		<div>
+			<a ng-click="updateLikes(blog.blogId)"><span
+				class="glyphicon glyphicon-thumbs-up"
+				ng-class="isLiked?'liked':'default'"></span></a> likes
+			{{blog.likes}}<br>
+			<textarea rows="4" cols="70" ng-model="commentTxt"></textarea> 
+			<button ng-click="addBlogComment(commentTxt,blog)" class="btn btn-primary">POST COMMENT</button>
+			{{blogComment.commentTxt}}<br>
+			<a ng-click="getAllBlogComments(blog.blogId)">show comments</a><br>
+			<ul ng-repeat="blogComment in blogComments">
+			 <li>
+			    {{blogComment.commentTxt}} &nbsp;, {{blogComment.commentedBy.firstName}},{{blogComment.commentedBy.lastName}}, 
+			    &nbsp; {{blogComment.commentedOn | date:'dd-MMMM-yyyy :hh:mm:ss' }}
+			 </li>
+			</ul>
+		</div>
+	</div>
+
+
+</div>
