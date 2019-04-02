@@ -23,13 +23,14 @@
 	 $scope.login=function(user){
 		 UserService.login(user).then(
 		  		      function(response){
+		  		    	
 		  		    	  $rootScope.user=response.data
 		  		    	  $cookieStore.put('userDetails',response.data)
+		  		    	  
     		  		      $location.path('/home')  
 		  		      },
 		              function(response){
-                          console.log(response.status)
-		  		    	 console.log(response.data)
+                         
 		  		    	  $scope.error=response.data
 		  		      }
 		 )
@@ -47,7 +48,7 @@
 	 $scope.updateUserProfile=function(user){
 		 UserService.updateUserProfile(user).then(
                  function(response){
-		  		      $location.path('/profile')  
+		  		      $location.path('/home')  
  
                    },
                    function(response){

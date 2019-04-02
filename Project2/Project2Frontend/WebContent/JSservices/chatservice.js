@@ -15,7 +15,7 @@ app.filter('reverse', function() {
 	  };
 	});
 app.factory('ChatService',function($rootScope){
-	var socket=new SockJS("/JobPortalMiddleware/chatmodule")
+	var socket=new SockJS("/Project2Middleware/chatmodule")
 	var stompClient=Stomp.over(socket)
 	stompClient.connect('','',function(frame){//once the browser connects with the websocket, frame object as a response
 		alert('Inside Connection function in ChatService')
